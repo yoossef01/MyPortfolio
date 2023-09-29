@@ -1,0 +1,323 @@
+.wrapper {
+    display: flex;
+    margin-left: 32px;
+    position: relative;
+    height: 100vh;
+    overflow-x: hidden;
+
+    .left-content {
+        padding-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-width: 100%;
+        text-emphasis: center;
+
+        .small-avatar {
+            align-self: center;
+            width: 400px;
+            height: auto;
+            border-radius: 100%;
+        }
+
+        .round-avatar {
+            align-self: center;
+            min-height: 360px;
+            width: 360px;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+
+        .title-text {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            white-space: nowrap;
+
+            .line-1 {
+                display: flex;
+                align-items: baseline;
+
+            }
+
+            .flex-column {
+                flex-direction: column;
+            }
+
+            .text {
+                display: flex;
+                height: 90px;
+                align-items: baseline;
+                font-size: 4rem;
+                font-weight: 600;
+
+                .greeting-text {
+                    margin-right: 24px;
+                }
+
+                .name-text {
+                    color: rgba(255, 182, 51, 255);
+                }
+
+                .tag {
+                    color: rgba(0, 0, 0, 0.2);
+
+                }
+
+                ;
+
+                .sim-cursor {
+                    color: rgba(0, 0, 0, 0.3);
+                    font-weight: 400
+                }
+
+                .invisible {
+                    opacity: 0;
+                }
+            }
+
+        }
+    }
+
+
+
+
+    .side-block {
+        position: absolute;
+        right: 0%;
+        bottom: 0;
+        width: 0;
+        height: 100vh;
+        background-color: rgba(255, 182, 51, 255);
+        animation: slide-in 1200ms forwards;
+
+        @keyframes slide-in {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 25%;
+            }
+        }
+    }
+
+    .image {
+        user-select: none;
+        padding-top: 80px;
+        position: relative;
+        width: 100%;
+
+        img {
+            position: absolute;
+            padding-top: 80px;
+            opacity: 0;
+            top: 0px;
+            right: 120px;
+            bottom: 0px;
+            height: 100%;
+            z-index: 1;
+
+        }
+    }
+
+    .show-image {
+        animation: visible 1000ms forwards;
+
+        @keyframes visible {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+    }
+
+    .bottom-area {
+        user-select: none;
+        position: absolute;
+        bottom: 80px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skip {
+        opacity: 0.5;
+
+        &:hover {
+            opacity: unset;
+            cursor: pointer;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .pointdown-animation {
+
+        animation: pointdown 2s forwards;
+
+
+        @keyframes pointdown {
+            0% {
+                bottom: 80px;
+            }
+
+            25% {
+                bottom: 70px;
+            }
+
+            50% {
+                bottom: 80px;
+            }
+
+            75% {
+                bottom: 70px;
+            }
+
+            100% {
+                bottom: 80px;
+            }
+        }
+    }
+
+
+    i {
+        bottom: 40px;
+        font-size: 40px;
+
+        &:hover {
+            cursor: pointer;
+            color: rgba(255, 182, 51, 255)
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1700px) {
+    .wrapper {
+        .image {
+            img {
+                right: 0px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1450px) {
+    .wrapper {
+        .tag {
+            font-size: 3rem;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1412px) {
+    .wrapper {
+        .image {
+            img {
+                top: unset;
+                height: 90%;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .wrapper {
+        padding-top: 40px;
+
+        .left-content {
+            .title-text {
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        margin-left: unset;
+
+        .left-content {
+            .title-text {
+                padding-top: 24px;
+                justify-content: flex-start;
+
+                .text {
+                    font-size: 8vw;
+                    align-self: center;
+
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 680px) {
+    .wrapper {
+        .left-content {
+            .title-text {
+                .text {
+                    font-size: 9vw;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 580px) {
+
+    .wrapper {
+        .small-avatar {
+            max-width: 325px;
+        }
+
+        .left-content {
+            .title-text {
+                padding-top: 100px;
+            }
+
+            .name-text {
+                font-size: 12vw;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+
+    .wrapper {
+        .small-avatar {
+            max-width: 325px;
+        }
+
+        .left-content {
+            .title-text {
+                padding-top: 100px;
+            }
+
+            .job-title {
+                line-height: 48px;
+                text-align: center;
+                font-size: 3rem;
+                white-space: break-spaces;
+            }
+        }
+    }
+}

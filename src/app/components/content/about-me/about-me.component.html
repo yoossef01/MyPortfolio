@@ -1,0 +1,37 @@
+<div class="content">
+    <div class="side-space left"></div>
+    <div *ngIf="showImageArea" class="image-area" data-aos-id="image" data-aos="fade-right" #imageArea>
+        <div class="image border"></div>
+        <div [class.swing-animation]="swingImgAnimation" class="image image-content" #imageContent>
+            <span class="pin"></span>
+            <img draggable="false" src="./assets/profile.jpg" alt="profile-image-2">
+        </div>
+    </div>
+
+    <div class="about-me-text" data-aos="fade-left">
+        <h1>About me</h1>
+        <div class="text-area">
+           
+I am Tunisian and a final-year computer science engineering 
+student at the National School of Computer Science (ENSI). 
+Currently, I am seeking a 4 to 6-month internship opportunity
+ starting in February 2024 as a software engineer. My objective 
+ is to further develop my programming skills while making a significant 
+ contribution to innovative computer projects.I'm a 23-year-old Tunisian,
+  and I'm in my final year of computer science engineering at the National 
+  School of Computer Science (ENSI). At the moment, I'm actively looking for 
+  a 4 to 6-month internship, which I hope to start in February 2024, with a 
+  focus on software engineering. My primary aim is to advance my programming
+   skills and actively contribute to cutting-edge computer projects.
+         </div>
+        <div *ngIf="showPublicMediaLinks" class="public-media-links">
+            <app-public-media-links></app-public-media-links>
+        </div>
+    </div>
+    <div class="side-space right">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"
+            style="width: 100%; height: 100%;">
+            <polygon points="100,0 100,100 0,50" fill="#ffb633" />
+        </svg>
+    </div>
+</div>

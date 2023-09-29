@@ -1,0 +1,127 @@
+.content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .icons {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 5 colonnes égales */
+        grid-template-rows: repeat(6, auto); /* 6 lignes automatiques */
+        gap: 24px;
+        padding-left: 120px;
+
+        .skill {
+            width: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0.4;
+            color: white;
+            border-radius: 25%;
+
+            .name {
+                text-align: center;
+                word-wrap: break-word;
+                opacity: 0.4;
+            }
+        }
+
+        .highlight {
+            opacity: 1;
+            color: rgb(255, 182, 51);
+
+            .name {
+                opacity: 1;
+            }
+        }
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .area {
+        width: 100%;
+
+    }
+
+    .side-space {
+        svg {
+            padding: 0px 40px 0px 0px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .content {
+
+        // margin: 0px 24px;
+        .icons {
+            padding-left: 80px;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 1160px) {
+    .content {
+        justify-content: center;
+        gap: 36px;
+
+        .icons {
+            padding-left: unset;
+        }
+
+        .side-space {
+            svg {
+                padding: unset;
+            }
+        }
+
+
+        .side-space.right {
+            display: none;
+        }
+    }
+
+}
+
+// @media only screen and (max-width: 950p)
+
+@media only screen and (max-width: 850px) {
+    .content {
+        margin: 0px 40px;
+
+        .side-space {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .content {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .content {
+        margin: 0px 24px;
+
+        .icons {
+            gap: 16px;
+
+            .skill {
+                width: 60px;
+                font-size: 12px;
+                gap: 4px;
+
+                img {
+                    max-width: 40px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<div class="content">
+    <div class="side-space left">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"
+            style="width: 100%; height: 100%;">
+            <polygon points="0,0 0,100 100,50" fill="#ffb633" />
+        </svg>
+    </div>
+    <div class="head-and-projects">
+        <div class="head-area">
+            <span>
+                <h1>Projects</h1>
+            </span>
+            
+        </div>
+        <div class="project-area">
+            <ng-container *ngFor="let project of projects, index as i">
+                <div class="project">
+                    <app-project [project]="project"></app-project>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="side-space right"></div>
+</div>

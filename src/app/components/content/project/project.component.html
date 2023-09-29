@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="description" data-aos="fade-up" data-aos-once="true">
+        <div class="text">
+            <h2>{{ project.title }}</h2>
+            <h4>{{ project.date }}</h4>
+            <div>{{ project.description }}</div>
+        </div>
+        <div class="techs">
+            <ng-container *ngFor="let tech of project.usedTechs, index as i">
+                <span class="tech">{{ tech }}</span>
+                
+            </ng-container>
+        </div>
+    </div>
+    <div (mouseover)="showOverlay = true" (mouseleave)="showOverlay = false" class="preview" data-aos="fade-down" data-aos-once="true">
+        <img src="{{ project.imagePath }}" style="width: 300px;height: 250px;">
+                <div *ngIf="showOverlay" class="hover-overlay">
+            <!-- <a href="{{ project.r }}" target="_blank">Try Out</a> -->
+            
+            <a href="{{ project.githubLink }}" target="_blank"><div></div>GitHub</a>
+        </div>
+    </div>
+</div>

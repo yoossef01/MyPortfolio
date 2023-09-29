@@ -11,38 +11,35 @@
     </div>
 
 
-    <form #contactForm="ngForm" action="" [formGroup]="formGroup" data-aos="zoom-in" data-aos-once="true"
-        (ngSubmit)="submitForm()">
+    <form #contactForm="ngForm" action="" [formGroup]="form" data-aos="zoom-in" data-aos-once="true"
+        (ngSubmit)="send()">
         <span class=" p-float-label">
-            <input formControlName="name" pInputText id="name">
+            <input formControlName="from_name" pInputText id="name">
             <label htmlFor="name">name</label>
         </span>
         <span class=" p-float-label">
-            <input formControlName="email" pInputText id="mail">
+            <input formControlName="from_email" pInputText id="mail">
             <label htmlFor="email">email</label>
         </span>
         <span class=" p-float-label">
-            <input formControlName="company" pInputText id="company">
+            <input formControlName="from_company" pInputText id="company">
             <label htmlFor="company">company (optional)</label>
         </span>
-        <span class=" p-float-label">
-            <input formControlName="website" pInputText id="website">
-            <label htmlFor="website">website (optional)</label>
-        </span>
+        
         <span class=" p-float-label">
             <textarea formControlName="message" pInputTextarea id="message"></textarea>
             <label htmlFor="message">message</label>
         </span>
 
         <p-button [disabled]="!contactForm.valid" class="button" type="ngSubmit" label="Send Message" styleClass="p-button-raised p-button-text p-button-warning w-full"></p-button>
-        <div *ngIf="mailSent" class="mail-sent-overlay">
+        <!-- <div *ngIf="mailSent" class="mail-sent-overlay">
             <div class="overlay-content">
                 <h3>Thank you very much!</h3>
                 <div>Your message has been sent.</div>
                 <div>I will respond as soon as possible.</div>
             </div>
 
-        </div>
+        </div> -->
     </form>
 
 </div>

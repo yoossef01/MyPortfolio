@@ -1,31 +1,23 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { AbstractControl, isFormControl } from '@angular/forms';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Validators } from '@angular/forms';
-declare var mailjs: any;
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent implements OnInit{
+export class ContactComponent {
   @Output() showGithubLink: boolean = false;
-  to!:string;
-  subject!:string;
-  text!:string;
+
   constructor() {
     Object.values(this.formGroup.controls).forEach(control => {
       this.watchFormControlValue(control);
     })
   }
-  ngOnInit() {
-    mailjs.init({
-      username: 'votre_nom_utilisateur',
-      password: 'votre_mot_de_passe'
-    });
-  }
+
   watchFormControlValue(control: AbstractControl) {
     control.valueChanges.subscribe((controlValue) => {
       if (control.dirty && controlValue === '') {
@@ -33,21 +25,7 @@ export class ContactComponent implements OnInit{
       }
     })
   }
-  // sendEmail() {
-  //   const message = {
-  //     to: this.to,
-  //     subject: this.subject,
-  //     text: this.text
-  //   };
-  
-  //   mailjs.send(message, (error: any, info: any) => {
-  //     if (error) {
-  //       console.error('Erreur lors de l\'envoi de l\'e-mail :', error);
-  //     } else {
-  //       console.log('E-mail envoyé avec succès :', info);
-  //     }
-  //   });
-  // }
+
 
   mailSent: boolean = false;
   value: string = '';
@@ -109,5 +87,3 @@ export class ContactComponent implements OnInit{
   }
 
 }
-
-

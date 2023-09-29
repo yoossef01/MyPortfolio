@@ -12,7 +12,7 @@
 
 
     <form #contactForm="ngForm" action="" [formGroup]="formGroup" data-aos="zoom-in" data-aos-once="true"
-        (ngSubmit)="sendMail()">
+        (ngSubmit)="submitForm()">
         <span class=" p-float-label">
             <input formControlName="name" pInputText id="name">
             <label htmlFor="name">name</label>
@@ -44,10 +44,5 @@
 
         </div>
     </form>
-    <!-- <form (submit)="sendEmail()">
-        <input type="email" [(ngModel)]="to" placeholder="Destinataire" required>
-        <input type="text" [(ngModel)]="subject" placeholder="Sujet" required>
-        <textarea [(ngModel)]="text" placeholder="Contenu de l'e-mail" required></textarea>
-        <button type="submit">Envoyer</button>
-      </form> -->
+
 </div>
